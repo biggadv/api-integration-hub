@@ -1,0 +1,282 @@
+:root {
+  --bg: #0f1222;
+  --card: #171b2f;
+  --card-soft: #1f2542;
+  --text: #f3f6ff;
+  --muted: #a3aed0;
+  --primary: #5c7cff;
+  --primary-2: #8f66ff;
+  --success: #1ad598;
+  --danger: #ff6d7a;
+  --shadow: 0 14px 32px rgba(8, 12, 30, 0.35);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  background: radial-gradient(circle at 20% 10%, #202a4c, var(--bg) 40%);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+.bg-glow {
+  position: fixed;
+  width: 420px;
+  height: 420px;
+  top: -140px;
+  right: -120px;
+  border-radius: 50%;
+  filter: blur(40px);
+  background: rgba(92, 124, 255, 0.32);
+  pointer-events: none;
+}
+
+.app-shell {
+  width: min(980px, 92%);
+  margin: 28px auto 48px;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 22px;
+}
+
+.topbar h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.topbar p {
+  margin: 8px 0 0;
+  color: var(--muted);
+}
+
+.card {
+  background: linear-gradient(160deg, var(--card), var(--card-soft));
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: var(--shadow);
+}
+
+.auth-card {
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.tabs {
+  display: flex;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: 5px;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.tab {
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  border-radius: 9px;
+  padding: 10px;
+  flex: 1;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.tab.active {
+  background: rgba(92, 124, 255, 0.22);
+  color: #fff;
+}
+
+.form {
+  display: none;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form.active {
+  display: flex;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+
+input {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(10, 13, 24, 0.7);
+  color: var(--text);
+  border-radius: 11px;
+  padding: 11px 12px;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-weight: 700;
+}
+
+.primary {
+  background: linear-gradient(135deg, var(--primary), var(--primary-2));
+  color: #fff;
+}
+
+.secondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text);
+}
+
+.ghost {
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+button:disabled {
+  opacity: 0.52;
+  cursor: not-allowed;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.msg {
+  min-height: 20px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 14px;
+}
+
+.stat span {
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.stat h3 {
+  margin: 8px 0 2px;
+}
+
+.upgrade {
+  margin-top: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.upgrade h3 {
+  margin: 0 0 6px;
+}
+
+.upgrade p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.quiz-card {
+  margin-top: 14px;
+}
+
+.quiz-head {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.pill {
+  background: rgba(26, 213, 152, 0.18);
+  color: #b9ffe7;
+  border-radius: 999px;
+  padding: 7px 11px;
+  font-size: 0.78rem;
+}
+
+.pill-dark {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text);
+}
+
+#questionStatement {
+  margin-top: 4px;
+  font-size: 1.2rem;
+  line-height: 1.4;
+}
+
+.options {
+  display: grid;
+  gap: 10px;
+  margin: 16px 0;
+}
+
+.option {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid transparent;
+  border-radius: 14px;
+  padding: 12px;
+  color: var(--text);
+  text-align: left;
+}
+
+.option.selected {
+  border-color: rgba(92, 124, 255, 0.9);
+  background: rgba(92, 124, 255, 0.2);
+}
+
+.option.correct {
+  border-color: rgba(26, 213, 152, 0.9);
+  background: rgba(26, 213, 152, 0.2);
+}
+
+.option.wrong {
+  border-color: rgba(255, 109, 122, 0.9);
+  background: rgba(255, 109, 122, 0.2);
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+.feedback {
+  margin-top: 14px;
+  border-radius: 14px;
+  padding: 14px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.feedback.correct {
+  border-color: rgba(26, 213, 152, 0.4);
+}
+
+.feedback.incorrect {
+  border-color: rgba(255, 109, 122, 0.4);
+}
+
+@media (max-width: 700px) {
+  .actions,
+  .upgrade {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

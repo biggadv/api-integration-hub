@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OAB Quest • Aprenda para passar</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="bg-glow"></div>
+    <main class="app-shell">
+      <header class="topbar">
+        <div>
+          <h1>OAB Quest</h1>
+          <p>Seu treino diário estilo Duolingo para a prova da OAB.</p>
+        </div>
+        <button id="logoutBtn" class="ghost hidden">Sair</button>
+      </header>
+
+      <section id="authCard" class="card auth-card">
+        <div class="tabs">
+          <button id="tabLogin" class="tab active">Entrar</button>
+          <button id="tabRegister" class="tab">Criar conta</button>
+        </div>
+
+        <form id="loginForm" class="form active">
+          <label>E-mail<input type="email" name="email" required /></label>
+          <label>Senha<input type="password" name="password" required /></label>
+          <button class="primary" type="submit">Entrar agora</button>
+        </form>
+
+        <form id="registerForm" class="form">
+          <label>Nome<input type="text" name="name" required /></label>
+          <label>E-mail<input type="email" name="email" required /></label>
+          <label>Senha<input type="password" name="password" minlength="6" required /></label>
+          <button class="primary" type="submit">Começar grátis</button>
+        </form>
+        <p id="authMsg" class="msg"></p>
+      </section>
+
+      <section id="dashboard" class="hidden">
+        <div class="stats-grid">
+          <article class="card stat">
+            <span>Plano</span>
+            <h3 id="planBadge">Free</h3>
+          </article>
+          <article class="card stat">
+            <span>Sequência</span>
+            <h3 id="streakValue">0 dias 🔥</h3>
+          </article>
+          <article class="card stat">
+            <span>XP / Nível</span>
+            <h3 id="xpLevelValue">0 XP · Lv.1</h3>
+          </article>
+          <article class="card stat">
+            <span>Precisão</span>
+            <h3 id="accuracyValue">0%</h3>
+          </article>
+        </div>
+
+        <section id="upgradeBanner" class="card upgrade hidden">
+          <div>
+            <h3>Desbloqueie o Premium</h3>
+            <p>Treine sem limites diários, evolua mais rápido e passe com segurança.</p>
+          </div>
+          <button id="upgradeBtn" class="primary">Assinar Premium</button>
+        </section>
+
+        <section class="card quiz-card">
+          <div class="quiz-head">
+            <span id="questionTopic" class="pill">Tema</span>
+            <span id="questionDifficulty" class="pill pill-dark">Nível 1</span>
+          </div>
+          <h2 id="questionStatement">Clique em “Nova questão” para começar seu treino.</h2>
+          <div id="optionsWrap" class="options"></div>
+          <div class="actions">
+            <button id="nextQuestionBtn" class="secondary">Nova questão</button>
+            <button id="answerBtn" class="primary" disabled>Responder</button>
+          </div>
+          <div id="feedbackBox" class="feedback hidden"></div>
+          <p id="limitInfo" class="msg"></p>
+        </section>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
